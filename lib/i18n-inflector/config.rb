@@ -261,21 +261,21 @@ module I18n
 
       # A string for regular expression that catches patterns.
       PATTERN_RESTR   = '(.?)'  << Markers::PATTERN       <<
-                        '([^\\' << Markers::PATTERN_BEGIN << ']*)\\' << Markers::PATTERN_BEGIN <<
-                        '([^\\' << Markers::PATTERN_END   << ']+)\\' << Markers::PATTERN_END   <<
+                        '([^\ \\' << Markers::PATTERN_BEGIN << ']*)\\' << Markers::PATTERN_BEGIN <<
+                        '([^\ \\' << Markers::PATTERN_END   << ']+)\\' << Markers::PATTERN_END   <<
                         '((?:\\'<< Markers::PATTERN_BEGIN << '([^\\' << Markers::PATTERN_BEGIN <<
                         ']+)\\' << Markers::PATTERN_END   << ')*)'
 
       # A string for regular expression that extracts additional patterns attached.
       MULTI_RESTR     = '\\'    << Markers::PATTERN_BEGIN          <<
-                        '([^\\' << Markers::PATTERN_END + ']+)\\'  <<
+                        '([^\ \\' << Markers::PATTERN_END + ']+)\\'  <<
                         Markers::PATTERN_END
 
       # A regular expression that catches token groups or single tokens.
       TOKENS_RESTR   = '(?:'   <<
                        '([^'   << Operators::Tokens::ASSIGN  << '\\'      << Operators::Tokens::OR << ']+)' <<
                                   Operators::Tokens::ASSIGN  << '+'       <<
-                       '([^\\' << Operators::Tokens::OR      << ']+)\1?)' <<
+                       '([^\ \\' << Operators::Tokens::OR      << ']+)\1?)' <<
                        '|([^'  << Operators::Tokens::ASSIGN  << '\\'      << Operators::Tokens::OR << ']+)'
 
       # A regular expression that catches patterns.

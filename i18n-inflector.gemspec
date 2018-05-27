@@ -1,8 +1,5 @@
 # encoding: utf-8
-
-lib = File.expand_path('../../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
-
+$:.push File.expand_path("../lib", __FILE__)
 require 'i18n-inflector/version'
 
 if !defined?(YAML::ENGINE).nil? && YAML::ENGINE.respond_to?(:yamler)
@@ -34,5 +31,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler',           '>= 1.0.15'
   s.add_development_dependency 'hoe-yard',          '>= 0.1.2'
   s.add_development_dependency 'hoe-bundler',       '>= 1.1.0'
-
 end
